@@ -1,2 +1,2 @@
-# aof-2020
-adventur of code 2020
+# Adventure of code 2020
+https://adventofcode.com/2020/
