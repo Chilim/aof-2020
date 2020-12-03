@@ -6,7 +6,7 @@ const grid = data.split(/\n/);
 const isTree = (char) => char === "#";
 
 const getTreeCount = (grid, right, down) => {
-  let treeCount = 0;
+  let treesCount = 0;
   const leapX = right;
   const leapY = down;
   let index = 0;
@@ -15,12 +15,12 @@ const getTreeCount = (grid, right, down) => {
     const row = grid[i];
     const remain = index % row.length;
     if (isTree(row[remain])) {
-      treeCount += 1;
+      treesCount += 1;
     }
     index += leapX;
   }
 
-  return treeCount;
+  return treesCount;
 };
 
 const task1 = () => getTreeCount(grid, 3, 1);
@@ -32,10 +32,10 @@ const task2 = () => {
     [7, 1],
     [1, 2],
   ];
-  const treeList = slopes.map(([right, down]) =>
+  const treesList = slopes.map(([right, down]) =>
     getTreeCount(grid, right, down)
   );
-  return treeList.reduce((acc, treeCount) => (acc *= treeCount), 1);
+  return treesList.reduce((acc, treeCount) => (acc *= treeCount), 1);
 };
 
 console.log(task1());
