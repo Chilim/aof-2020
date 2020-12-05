@@ -19,8 +19,8 @@ const getPosition = (chars, range) => {
     return range[0];
   }
   const [first, ...rest] = chars;
-  const newRows = splitter(first)(range);
-  return getPosition(rest, newRows);
+  const newRange = splitter(first)(range);
+  return getPosition(rest, newRange);
 };
 
 const getSeatId = (rowsRange, colsRange, seat) => {
