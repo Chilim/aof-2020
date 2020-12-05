@@ -75,13 +75,7 @@ const getFirstValidPassports = (data) => {
 };
 
 const getSecondValidPassports = (passports) => {
-  const validPassports = [];
-  passports.forEach((passport, idx) => {
-    if (secondValidation(passport, idx)) {
-      validPassports.push(passport);
-    }
-  });
-  return validPassports;
+  return passports.filter((passport) => secondValidation(passport));
 };
 
 const firstTask = (data) => {
