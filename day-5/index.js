@@ -1,6 +1,8 @@
 const fs = require("fs");
 
 const input = fs.readFileSync("day-5/input.txt", "utf-8");
+const rowCount = 128;
+const colCount = 8;
 
 const range = (num) => new Array(num).fill(true).map((_, idx) => idx);
 
@@ -28,13 +30,13 @@ const getSeatId = (rowsRange, colsRange, seat) => {
   const colChars = seat.replace(/[F, B]/g, '').split('');
   const rowNumber = getPosition(rowChars, rowsRange);
   const colNumber = getPosition(colChars, colsRange);
-  return rowNumber * 8 + colNumber;
+  return rowNumber * colCount + colNumber;
 };
 
 const getSeatsIds = () => {
   const rows = input.trim().split(/\n/);
-  const rowsRange = range(128);
-  const colsRange = range(8);
+  const rowsRange = range(rowCount);
+  const colsRange = range(colCount);
   return rows.map((row) => getSeatId(rowsRange, colsRange, row));
 };
 
