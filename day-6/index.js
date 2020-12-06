@@ -5,9 +5,9 @@ const groups = input.split(/\n\n/).map((group) => group.split(/\n/));
 
 const countUniqueYes = (group) => {
   const set = group.reduce((acc, questions) => {
-    [...questions].forEach((q) => acc.set(q));
+    [...questions].forEach((q) => acc.add(q));
     return acc;
-  }, new Map());
+  }, new Set());
   return [...set].length;
 };
 
