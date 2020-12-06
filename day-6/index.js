@@ -27,10 +27,7 @@ const countConsentYes = (group) => {
 
 const task1 = groups.reduce((acc, group) => (acc += countUniqueYes(group)), 0);
 
-const task2 = groups.reduce(
-  (acc, group, idx) => (acc += countConsentYes(group)),
-  0
-);
+const task2 = groups.reduce((acc, group) => (acc += countConsentYes(group)), 0);
 
 console.log(task1);
 console.log(task2);
