@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { createConnection } = require("net");
 
 const input = fs.readFileSync("day-6/input.txt", "utf-8");
 const groups = input.split(/\n\n/).map((group) => group.split(/\n/));
