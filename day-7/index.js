@@ -17,9 +17,8 @@ const bags = rules.reduce((acc, rule) => {
 	return { ...acc, [container]: contents };
 }, {});
 
-const getContainerBags = (bags, searchBag) => {
-	return Object.keys(bags).filter(key => bags[key].some(bag => bag.color === searchBag));
-};
+const getContainerBags = (bags, searchBag) =>
+	Object.keys(bags).filter(key => bags[key].some(bag => bag.color === searchBag));
 
 const getContainers = (bags, searchBag) => {
 	const iter = (searchBags, acc = []) => {
