@@ -55,7 +55,7 @@ const changeCommands = (instructions) => {
 			return 'no solution found';
 		}
 		if (instrs.length === 0) {
-			return iter(instructions, changer, changeable, []);
+			return iter(instructions, changer, changeable);
 		}
 		const [first, ...rest] = instrs;
 		if (first.command === changeable) {
