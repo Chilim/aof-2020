@@ -25,6 +25,7 @@ const instrsOperations = operator => {
 	}[operator];
 };
 
+
 const getAccValue = (instructions) => {
 	const iter = (instrs, tracker = [], acc = 0) => {
 		if (instrs.length === 0) {
