@@ -13,26 +13,7 @@ const isValidNext = (preamble, next) => {
     }
   }
   return isValid;
-}
-
-const getInValidNumber = (numbers, preambleLength) => {
-  let idxStart = 0;
-  let idxEnd = preambleLength;
-  let length = numbers.length;
-  let invalidNumber = undefined;
-  while (length >= 0) {
-    const preamble = numbers.slice(idxStart, idxEnd);
-    const isValid = isValidNext(preamble, numbers[idxEnd]);
-    if (!isValid) {
-      invalidNumber = numbers[idxEnd];
-      break;
-    }
-    length -= 1;
-    idxStart += 1;
-    idxEnd += 1;
-  }
-  return invalidNumber;
-}
+};
 
 const getSumSequence = (numbers, invalidNum) => {
   let idxStart = 0;
@@ -52,7 +33,26 @@ const getSumSequence = (numbers, invalidNum) => {
     pointer += 1;
   }
   return numbers.slice(idxStart, pointer);
-}
+};
+
+const getInValidNumber = (numbers, preambleLength) => {
+  let idxStart = 0;
+  let idxEnd = preambleLength;
+  let length = numbers.length;
+  let invalidNumber = undefined;
+  while (length >= 0) {
+    const preamble = numbers.slice(idxStart, idxEnd);
+    const isValid = isValidNext(preamble, numbers[idxEnd]);
+    if (!isValid) {
+      invalidNumber = numbers[idxEnd];
+      break;
+    }
+    length -= 1;
+    idxStart += 1;
+    idxEnd += 1;
+  }
+  return invalidNumber;
+};
 
 const getWeakness = (numbers, preambleLength) => {
   const inValidNum = getInValidNumber(numbers, preambleLength);
