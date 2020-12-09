@@ -38,7 +38,6 @@ const getSumSequence = (numbers, invalidNum) => {
   let idxStart = 0;
   let pointer = 1;
   let sum = numbers[idxStart];
-
   while (idxStart <= numbers.length) {
     sum += numbers[pointer];
     if (sum === invalidNum) {
@@ -61,7 +60,7 @@ const getWeakness = (numbers, preambleLength) => {
   return Math.max(...sumSequence) + Math.min(...sumSequence);
 };
 
-console.log(getInValidNumber(numbers, 25));
-console.log(getWeakness(numbers, 25));
+console.log('first task: ', getInValidNumber(numbers, 25));
+console.log('second task ', getWeakness(numbers, 25));
 
 
