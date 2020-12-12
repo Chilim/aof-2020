@@ -4,7 +4,7 @@ const outputs = input.split(/\n/).filter(Boolean).map(Number);
 
 const getJoltsOutputs = (outputs) => {
   const sorted = outputs.sort((a, b) => a - b);
-  return [0, ...sorted, Math.max(...sorted) + 3]; // 0 for outlet, max + 3 for built-in adapter
+  return [0, ...sorted, sorted[sorted.length - 1] + 3]; // 0 for outlet, max + 3 for built-in adapter
 }
 
 const getJoltDiffsList = (joltsOutputs) => {
