@@ -2,14 +2,8 @@ const fs = require('fs');
 const input = fs.readFileSync('day-11/input.txt', 'utf-8');
 const seats = input.split(/\n/).map(row => row.split('')).filter(Boolean);
 
-const adjacentSeatsAreOccupied = (adjacentSeats, occupNum) => {
-  // console.log('adjacentSeats', adjacentSeats);
-  return adjacentSeats.filter(s => s === '#').length > occupNum;
-};
-
-const noOccupiedSeats = (adjacentSeats) => {
-  return adjacentSeats.every(seat => seat === 'L' || seat === '.')
-};
+const adjacentSeatsAreOccupied = (adjacentSeats, occupNum) => adjacentSeats.filter(s => s === '#').length > occupNum;
+const noOccupiedSeats = (adjacentSeats) => adjacentSeats.every(seat => seat === 'L' || seat === '.');
 
 const getAdjacentSeats = (seats, rowIdx, seatIdx) => {
   const sameRow = seats[rowIdx];
